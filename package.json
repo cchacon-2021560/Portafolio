@@ -1,0 +1,12 @@
+{
+  "name": "portafolio",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter frontend dev\" \"pnpm --filter contact-service dev\"",
+    "build": "pnpm --filter frontend build",
+    "lint": "pnpm --filter frontend lint"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
