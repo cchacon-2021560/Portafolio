@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaPaperPlane, FaLinkedin, FaExternalLink } from 'react-icons/fa6'
+import { FaPaperPlane, FaLinkedin, FaUpRightFromSquare } from 'react-icons/fa6'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
@@ -49,7 +49,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm"
           >
-            <FaLinkedin size={18} /> LinkedIn <FaExternalLink size={10} />
+            <FaLinkedin size={18} /> LinkedIn <FaUpRightFromSquare size={10} />
           </a>
           <a
             href="[Tu CompuTrabajo]"
@@ -57,7 +57,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm"
           >
-            CompuTrabajo <FaExternalLink size={10} />
+            CompuTrabajo <FaUpRightFromSquare size={10} />
           </a>
         </div>
 

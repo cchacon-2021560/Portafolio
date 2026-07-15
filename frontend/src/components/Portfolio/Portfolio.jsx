@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaGithub, FaExternalLink, FaImage, FaCode } from 'react-icons/fa6'
+import { FaGithub, FaUpRightFromSquare, FaImage, FaCode } from 'react-icons/fa6'
 
 const projects = [
   {
@@ -76,7 +76,7 @@ export default function Portfolio() {
                     href={project.demo}
                     className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-cyan-400 transition-colors"
                   >
-                    <FaExternalLink /> Demo
+                    <FaUpRightFromSquare /> Demo
                   </a>
                 </div>
               </div>

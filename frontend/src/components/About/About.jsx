@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaUser, FaTarget, FaGraduationCap } from 'react-icons/fa6'
+import { FaUser, FaBullseye, FaGraduationCap } from 'react-icons/fa6'
 
 export default function About() {
   return (
@@ -22,7 +22,7 @@ export default function About() {
               items: ['Nombre: [Tu Nombre]', 'Ubicación: [Tu Ciudad]', 'Email: [tu@email.com]'],
             },
             {
-              icon: <FaTarget className="text-cyan-400" size={28} />,
+              icon: <FaBullseye className="text-cyan-400" size={28} />,
               title: 'Metas Profesionales',
               items: ['[Meta 1: Ejemplo]', '[Meta 2: Ejemplo]', '[Meta 3: Ejemplo]'],
             },
