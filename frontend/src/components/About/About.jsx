@@ -19,17 +19,17 @@ export default function About() {
             {
               icon: <FaUser className="text-cyan-400" size={28} />,
               title: 'Datos Personales',
-              items: ['Nombre: [Tu Nombre]', 'Ubicación: [Tu Ciudad]', 'Email: [tu@email.com]'],
+              items: ['Nombre: Carlos Daniel Chacón Duarte', 'Ubicación: Guatemala', 'Email: carloscdcd817@gmail.com'],
             },
             {
               icon: <FaBullseye className="text-cyan-400" size={28} />,
               title: 'Metas Profesionales',
-              items: ['[Meta 1: Ejemplo]', '[Meta 2: Ejemplo]', '[Meta 3: Ejemplo]'],
+              items: ['Inserción Laboral', 'Especialización Técnica', 'Buenas Prácticas'],
             },
             {
               icon: <FaGraduationCap className="text-cyan-400" size={28} />,
               title: 'Formación',
-              items: ['[Institución]', '[Carrera / Programa]', '[Año de egreso]'],
+              items: ['Centro Educativo Técnivo Laboral Kinal', 'Informática', 'Sexto Diversificado'],
             },
           ].map((card, i) => (
             <motion.div

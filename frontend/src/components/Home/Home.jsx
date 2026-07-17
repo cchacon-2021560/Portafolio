@@ -23,7 +23,7 @@ export default function Home() {
           transition={{ delay: 0.4 }}
           className="text-5xl md:text-7xl font-bold text-white mb-6"
         >
-          [Tu Nombre]
+          Carlos Chacón
         </motion.h1>
 
         <motion.p
@@ -32,7 +32,7 @@ export default function Home() {
           transition={{ delay: 0.6 }}
           className="text-xl md:text-2xl text-gray-400 mb-10"
         >
-          [Tu Frase Profesional]
+          Construyendo aplicaciones web eficientes, escalables y centradas en el usuario.
         </motion.p>
 
         <motion.a

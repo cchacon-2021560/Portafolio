@@ -3,20 +3,20 @@ import { FaGithub, FaUpRightFromSquare, FaImage, FaCode } from 'react-icons/fa6'
 
 const projects = [
   {
-    title: '[Nombre del Proyecto]',
-    description: '[Descripción breve del proyecto y tecnologías usadas]',
+    title: 'Park Point Solutions',
+    description: 'Sistema de gestión para parqueaderos con funcionalidades de control de acceso y facturación.',
     github: '#',
     demo: '#',
   },
   {
-    title: '[Nombre del Proyecto]',
-    description: '[Descripción breve del proyecto y tecnologías usadas]',
+    title: 'CyberVault',
+    description: 'Sistema de gestión gestión bancaria con encriptación de extremo a extremo.',
     github: '#',
     demo: '#',
   },
   {
-    title: '[Nombre del Proyecto]',
-    description: '[Descripción breve del proyecto y tecnologías usadas]',
+    title: 'Buen Provecho',
+    description: 'Sistema de gestión para restaurantes con funcionalidades de reservas y gestión de inventario.',
     github: '#',
     demo: '#',
   },

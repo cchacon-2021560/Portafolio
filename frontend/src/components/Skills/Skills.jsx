@@ -5,7 +5,6 @@ const skills = [
   { name: 'Java', icon: <FaJava size={36} />, level: 80, color: 'from-orange-500 to-red-600' },
   { name: 'Node.js', icon: <FaNodeJs size={36} />, level: 75, color: 'from-green-500 to-green-700' },
   { name: 'React', icon: <FaReact size={36} />, level: 85, color: 'from-cyan-400 to-blue-500' },
-  { name: 'Angular', icon: <FaAngular size={36} />, level: 70, color: 'from-red-500 to-red-700' },
   { name: 'MySQL', icon: <FaDatabase size={36} />, level: 75, color: 'from-blue-400 to-blue-600' },
 ]
 
