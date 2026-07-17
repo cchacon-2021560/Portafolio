@@ -51,14 +51,6 @@ export default function Contact() {
           >
             <FaLinkedin size={18} /> LinkedIn <FaUpRightFromSquare size={10} />
           </a>
-          <a
-            href="[Tu CompuTrabajo]"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm"
-          >
-            CompuTrabajo <FaUpRightFromSquare size={10} />
-          </a>
         </div>
 
         <motion.form
@@ -78,7 +70,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500/50 transition-colors"
-                placeholder="[Tu Nombre]"
+                placeholder="Tu Nombre"
               />
             </div>
             <div>
@@ -90,7 +82,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500/50 transition-colors"
-                placeholder="[tu@email.com]"
+                placeholder="tu@email.com"
               />
             </div>
           </div>
@@ -104,7 +96,7 @@ export default function Contact() {
               onChange={handleChange}
               required
               className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500/50 transition-colors"
-              placeholder="[Asunto]"
+              placeholder="Asunto"
             />
           </div>
 
@@ -117,7 +109,7 @@ export default function Contact() {
               required
               rows={5}
               className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500/50 transition-colors resize-none"
-              placeholder="[Tu mensaje]"
+              placeholder="Tu mensaje"
             />
           </div>
 
