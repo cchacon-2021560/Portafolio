@@ -5,19 +5,19 @@ const projects = [
   {
     title: 'Park Point Solutions',
     description: 'Sistema de gestión para parqueaderos con funcionalidades de control de acceso y facturación.',
-    github: '#',
+    github: ' ',
     demo: '#',
   },
   {
     title: 'CyberVault',
     description: 'Sistema de gestión gestión bancaria con encriptación de extremo a extremo.',
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/ocumatz-2021660/Sistema_Bancario',
+    demo: 'https://sistema-bancario-bay.vercel.app?_vercel_share=gMVgp6E9Iw8UhUKIJFaZNqMNO0DkiCFb',
   },
   {
     title: 'Buen Provecho',
     description: 'Sistema de gestión para restaurantes con funcionalidades de reservas y gestión de inventario.',
-    github: '#',
+    github: 'https://github.com/iperez-2024003/Gestion-Restaurantes',
     demo: '#',
   },
 ]
