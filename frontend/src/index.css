@@ -1,4 +1,4 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -7,13 +7,224 @@ html {
 }
 
 body {
-  @apply bg-gray-950 text-gray-100 antialiased;
+  @apply text-gray-100 antialiased;
+  background: linear-gradient(160deg, #030712 0%, #0a1628 50%, #030712 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
+/* -- Dynamic background: floating orbs -- */
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-orbs::before,
+.bg-orbs::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+}
+
+.bg-orbs::before {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+  top: -10%;
+  left: -5%;
+  animation: orbFloat1 20s ease-in-out infinite;
+}
+
+.bg-orbs::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  bottom: -10%;
+  right: -5%;
+  animation: orbFloat2 25s ease-in-out infinite;
+}
+
+.orb-extra-1,
+.orb-extra-2 {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-extra-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
+  top: 40%;
+  right: 20%;
+  animation: orbFloat3 22s ease-in-out infinite;
+}
+
+.orb-extra-2 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.06) 0%, transparent 70%);
+  bottom: 20%;
+  left: 15%;
+  animation: orbFloat4 18s ease-in-out infinite;
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, 40px) scale(1.1); }
+  66% { transform: translate(-30px, 80px) scale(0.95); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-50px, -60px) scale(1.05); }
+  66% { transform: translate(40px, -30px) scale(0.9); }
+}
+
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-70px, 50px) scale(1.1); }
+}
+
+@keyframes orbFloat4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, -40px) scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-orbs::before,
+  .bg-orbs::after,
+  .orb-extra-1,
+  .orb-extra-2 {
+    animation: none !important;
+  }
+}
+
+/* -- Glass card -- */
 .glass-card {
   @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.glass-card:hover {
+  box-shadow: 0 8px 40px rgba(6, 182, 212, 0.08);
+}
+
+/* -- Section padding -- */
 .section-padding {
   @apply px-6 py-20 md:px-12 lg:px-24;
+}
+
+/* -- Photo glow -- */
+.photo-glow {
+  position: relative;
+}
+
+.photo-glow::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(6, 182, 212, 0.6),
+    rgba(59, 130, 246, 0.3),
+    rgba(6, 182, 212, 0.1),
+    rgba(34, 211, 238, 0.3),
+    rgba(6, 182, 212, 0.6)
+  );
+  animation: photoGlowSpin 6s linear infinite;
+  z-index: -1;
+}
+
+.photo-glow::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(6, 182, 212, 0.3),
+    transparent,
+    rgba(59, 130, 246, 0.2),
+    transparent,
+    rgba(6, 182, 212, 0.3)
+  );
+  animation: photoGlowSpin 6s linear infinite;
+  filter: blur(12px);
+  z-index: -2;
+}
+
+@keyframes photoGlowSpin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-glow::before,
+  .photo-glow::after {
+    animation: none !important;
+  }
+}
+
+/* -- Shimmer effect for skill bars -- */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.skill-bar-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-bar-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* -- Shine effect for portfolio cards -- */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(6, 182, 212, 0.03) 45%,
+    rgba(6, 182, 232, 0.06) 50%,
+    rgba(6, 182, 212, 0.03) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%) translateY(-100%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-shine:hover::before {
+  transform: translateX(30%) translateY(30%);
 }
