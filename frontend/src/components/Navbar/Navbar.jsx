@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FaBars, FaXmark } from 'react-icons/fa6'
 
@@ -6,7 +6,7 @@ const links = [
   { id: 'home', label: 'Inicio' },
   { id: 'about', label: 'Acerca de' },
   { id: 'skills', label: 'Habilidades' },
-  { id: 'resume', label: 'Currículum' },
+  { id: 'resume', label: 'Curriculum' },
   { id: 'portfolio', label: 'Portafolio' },
   { id: 'contact', label: 'Contacto' },
 ]
@@ -14,9 +14,11 @@ const links = [
 export default function Navbar() {
   const [active, setActive] = useState('home')
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
+      setScrolled(window.scrollY > 50)
       const sections = links.map(l => document.getElementById(l.id))
       const scrollY = window.scrollY + 100
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -35,7 +37,11 @@ export default function Navbar() {
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-white/10"
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-white/10 transition-all duration-300 ${
+        scrolled
+          ? 'bg-gray-950/90 backdrop-blur-xl shadow-lg shadow-black/20'
+          : 'bg-gray-950/60 backdrop-blur-md'
+      }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <a href="#home" className="text-xl font-bold text-white tracking-tight">
@@ -44,7 +50,7 @@ export default function Navbar() {
 
         <ul className="hidden md:flex gap-8">
           {links.map(link => (
-            <li key={link.id}>
+            <li key={link.id} className="relative">
               <a
                 href={`#${link.id}`}
                 className={`text-sm transition-colors ${
@@ -53,6 +59,13 @@ export default function Navbar() {
               >
                 {link.label}
               </a>
+              {active === link.id && (
+                <motion.div
+                  layoutId="navbar-indicator"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-cyan-400 rounded-full"
+                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                />
+              )}
             </li>
           ))}
         </ul>
