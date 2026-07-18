@@ -1,7 +1,10 @@
 ﻿import { motion } from 'framer-motion'
 import { FaArrowDown, FaUser } from 'react-icons/fa6'
+import useLanguage from '../../hooks/useLanguage'
 
 export default function Home() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="home"
@@ -16,7 +19,7 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="text-cyan-400 text-sm uppercase tracking-widest mb-4"
           >
-            Bienvenido a mi portafolio
+            {t('hero.welcome')}
           </motion.p>
 
           <motion.h1
@@ -25,7 +28,7 @@ export default function Home() {
             transition={{ delay: 0.4 }}
             className="text-5xl md:text-7xl font-bold text-white mb-6"
           >
-            Carlos Chacón
+            {t('hero.name')}
           </motion.h1>
 
           <motion.p
@@ -34,7 +37,7 @@ export default function Home() {
             transition={{ delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-400 mb-10 max-w-lg"
           >
-            Construyendo aplicaciones web eficientes, escalables y centradas en el usuario.
+            {t('hero.subtitle')}
           </motion.p>
 
           <motion.a
@@ -45,7 +48,7 @@ export default function Home() {
             whileHover={{ scale: 1.05 }}
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 transition-colors"
           >
-            Contáctame
+            {t('hero.cta')}
             <FaArrowDown className="animate-bounce" />
           </motion.a>
         </div>

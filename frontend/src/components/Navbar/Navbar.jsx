@@ -1,20 +1,23 @@
 ﻿import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
-import { FaBars, FaXmark } from 'react-icons/fa6'
-
-const links = [
-  { id: 'home', label: 'Inicio' },
-  { id: 'about', label: 'Acerca de' },
-  { id: 'skills', label: 'Habilidades' },
-  { id: 'resume', label: 'Curriculum' },
-  { id: 'portfolio', label: 'Portafolio' },
-  { id: 'contact', label: 'Contacto' },
-]
+import { FaBars, FaXmark, FaGlobe } from 'react-icons/fa6'
+import useLanguage from '../../hooks/useLanguage'
 
 export default function Navbar() {
   const [active, setActive] = useState('home')
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { language, toggleLanguage, t } = useLanguage()
+
+  const links = [
+    { id: 'home', label: t('nav.home') },
+    { id: 'about', label: t('nav.about') },
+    { id: 'skills', label: t('nav.skills') },
+    { id: 'resume', label: t('nav.resume') },
+    { id: 'certifications', label: t('nav.certifications') },
+    { id: 'portfolio', label: t('nav.portfolio') },
+    { id: 'contact', label: t('nav.contact') },
+  ]
 
   const onScroll = useCallback(() => {
     setScrolled(window.scrollY > 50)
@@ -26,7 +29,7 @@ export default function Navbar() {
         break
       }
     }
-  }, [])
+  }, [links])
 
   useEffect(() => {
     let ticking = false
@@ -59,7 +62,7 @@ export default function Navbar() {
           CDCD
         </a>
 
-        <ul className="hidden md:flex gap-8">
+        <ul className="hidden md:flex items-center gap-8">
           {links.map(link => (
             <li key={link.id} className="relative">
               <a
@@ -81,12 +84,22 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-gray-400 hover:text-white"
-        >
-          {open ? <FaXmark size={22} /> : <FaBars size={22} />}
-        </button>
+        <div className="flex items-center gap-4">
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-1.5 text-xs font-medium text-gray-400 hover:text-cyan-400 transition-colors border border-white/10 rounded-full px-3 py-1.5"
+          >
+            <FaGlobe size={12} />
+            {language === 'es' ? 'EN' : 'ES'}
+          </button>
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-gray-400 hover:text-white"
+          >
+            {open ? <FaXmark size={22} /> : <FaBars size={22} />}
+          </button>
+        </div>
       </div>
 
       {open && (

@@ -1,0 +1,83 @@
+﻿{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "skills": "Habilidades",
+    "resume": "Curriculum",
+    "certifications": "Reconocimientos",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "welcome": "Bienvenido a mi portafolio",
+    "name": "Carlos Chacón",
+    "subtitle": "Construyendo aplicaciones web eficientes, escalables y centradas en el usuario.",
+    "cta": "Contáctame"
+  },
+  "about": {
+    "title": "Sobre mi",
+    "p1": "Soy estudiante de <span>Informática</span> en el Centro Educativo Tecnico Laboral Kinal, con enfoque en el desarrollo de aplicaciones web. Me interesa construir soluciones funcionales que resuelvan problemas reales.",
+    "p2": "Actualmente estoy en mi último año de diversificado, donde he desarrollado proyectos como sistemas de gestión bancaria, plataformas de restaurantes y soluciones para parqueaderos. Cada proyecto me ha permitido aprender sobre arquitectura de software, bases de datos y trabajo en equipo.",
+    "p3": "Mi objetivo es insertarme en el ambito laboral como desarrollador, seguir creciendo tecnicamente y aportar valor al equipo que me reciba.",
+    "personalData": "Datos personales",
+    "education": "Kinal — Informatica (6to Diversificado)"
+  },
+  "skills": {
+    "title": "Habilidades"
+  },
+  "resume": {
+    "title": "Currículum Virtual",
+    "download": "Descargar CV",
+    "personalData": "Datos Personales",
+    "education": "Educación",
+    "educationItems": [
+      { "institution": "Centro Educativo Técnico Laboral Kinal", "period": "2024 – Actualidad", "degree": "Diversificado en Informática" },
+      { "institution": "Centro Educativo Técnico Laboral Kinal", "period": "2021 – 2023", "degree": "Básico" }
+    ],
+    "certifications": "Reconocimientos",
+    "certItems": [
+      { "name": "Reconocimiento por Excelencia Académica", "issuer": "Banco Industrial", "date": "Junio 2025" },
+      { "name": "Reconocimiento por Excelencia Académica", "issuer": "Banco Industrial", "date": "Junio 2026" }
+    ],
+    "competencies": "Competencias Personales",
+    "compItems": ["Trabajo en equipo", "Responsabilidad", "Actitud positiva", "Liderazgo", "Compromiso", "Capacidad de adaptación"]
+  },
+  "certifications": {
+    "title": "Reconocimientos",
+    "items": [
+      { "name": "Reconocimiento por Excelencia Académica", "issuer": "Banco Industrial", "date": "Junio 2025" },
+      { "name": "Reconocimiento por Excelencia Académica", "issuer": "Banco Industrial", "date": "Junio 2026" }
+    ]
+  },
+  "portfolio": {
+    "title": "Portafolio de Proyectos",
+    "ui": "Interfaz",
+    "code": "Codigo",
+    "projects": [
+      { "title": "Park Point Solutions", "description": "Sistema de gestión para parqueaderos con funcionalidades de control de acceso y facturacion." },
+      { "title": "CyberVault", "description": "Sistema de gestión bancaria con encriptacion de extremo a extremo." },
+      { "title": "Buen Provecho", "description": "Sistema de gestión para restaurantes con funcionalidades de reservas y gestion de inventario." }
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "name": "Nombre",
+    "namePlaceholder": "Tu Nombre",
+    "email": "Email",
+    "subject": "Asunto",
+    "subjectPlaceholder": "Asunto",
+    "message": "Mensaje",
+    "messagePlaceholder": "Tu mensaje",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "sent": "Mensaje enviado correctamente.",
+    "error": "Error al enviar. Intenta de nuevo."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "home": "Inicio",
+    "about": "Acerca de",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  }
+}

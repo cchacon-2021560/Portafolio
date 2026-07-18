@@ -1,10 +1,12 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaPaperPlane, FaLinkedin, FaUpRightFromSquare } from 'react-icons/fa6'
+import useLanguage from '../../hooks/useLanguage'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [status, setStatus] = useState(null)
+  const { t } = useLanguage()
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -39,7 +41,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-3xl font-bold text-white text-center mb-6"
         >
-          Contacto
+          {t('contact.title')}
         </motion.h2>
 
         <div className="flex justify-center gap-6 mb-12">
@@ -62,7 +64,7 @@ export default function Contact() {
         >
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm text-gray-400 mb-2">Nombre</label>
+              <label className="block text-sm text-gray-400 mb-2">{t('contact.name')}</label>
               <input
                 type="text"
                 name="name"
@@ -70,11 +72,11 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500/50 transition-colors"
-                placeholder="Tu Nombre"
+                placeholder={t('contact.namePlaceholder')}
               />
             </div>
             <div>
-              <label className="block text-sm text-gray-400 mb-2">Email</label>
+              <label className="block text-sm text-gray-400 mb-2">{t('contact.email')}</label>
               <input
                 type="email"
                 name="email"
@@ -88,7 +90,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label className="block text-sm text-gray-400 mb-2">Asunto</label>
+            <label className="block text-sm text-gray-400 mb-2">{t('contact.subject')}</label>
             <input
               type="text"
               name="subject"
@@ -96,12 +98,12 @@ export default function Contact() {
               onChange={handleChange}
               required
               className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500/50 transition-colors"
-              placeholder="Asunto"
+              placeholder={t('contact.subjectPlaceholder')}
             />
           </div>
 
           <div>
-            <label className="block text-sm text-gray-400 mb-2">Mensaje</label>
+            <label className="block text-sm text-gray-400 mb-2">{t('contact.message')}</label>
             <textarea
               name="message"
               value={form.message}
@@ -109,7 +111,7 @@ export default function Contact() {
               required
               rows={5}
               className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500/50 transition-colors resize-none"
-              placeholder="Tu mensaje"
+              placeholder={t('contact.messagePlaceholder')}
             />
           </div>
 
@@ -121,14 +123,14 @@ export default function Contact() {
             className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-medium text-sm hover:bg-cyan-500/20 transition-colors disabled:opacity-50"
           >
             <FaPaperPlane />
-            {status === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}
+            {status === 'sending' ? t('contact.sending') : t('contact.send')}
           </motion.button>
 
           {status === 'sent' && (
-            <p className="text-green-400 text-sm text-center">Mensaje enviado correctamente.</p>
+            <p className="text-green-400 text-sm text-center">{t('contact.sent')}</p>
           )}
           {status === 'error' && (
-            <p className="text-red-400 text-sm text-center">Error al enviar. Intenta de nuevo.</p>
+            <p className="text-red-400 text-sm text-center">{t('contact.error')}</p>
           )}
         </motion.form>
       </div>

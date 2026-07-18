@@ -1,0 +1,83 @@
+﻿{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "resume": "Resume",
+    "certifications": "Awards",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Welcome to my portfolio",
+    "name": "Carlos Chacón",
+    "subtitle": "Building efficient, scalable, and user-centered web applications.",
+    "cta": "Contact me"
+  },
+  "about": {
+    "title": "About me",
+    "p1": "I'm an <span>Informatics</span> student at Centro Educativo Tecnico Laboral Kinal, focused on web application development. I'm interested in building functional solutions that solve real problems.",
+    "p2": "Currently in my final year of high school, where I've developed projects such as banking management systems, restaurant platforms, and parking solutions. Each project has allowed me to learn about software architecture, databases, and teamwork.",
+    "p3": "My goal is to enter the workforce as a developer, keep growing technically, and bring value to the team that welcomes me.",
+    "personalData": "Personal data",
+    "education": "Kinal — Informatics (6th Grade)"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "resume": {
+    "title": "Virtual Resume",
+    "download": "Download CV",
+    "personalData": "Personal Data",
+    "education": "Education",
+    "educationItems": [
+      { "institution": "Centro Educativo Técnico Laboral Kinal", "period": "2024 – Present", "degree": "Informatics (High School)" },
+      { "institution": "Centro Educativo Técnico Laboral Kinal", "period": "2021 – 2023", "degree": "Middle School" }
+    ],
+    "certifications": "Awards",
+    "certItems": [
+      { "name": "Academic Excellence Award", "issuer": "Banco Industrial", "date": "June 2025" },
+      { "name": "Academic Excellence Award", "issuer": "Banco Industrial", "date": "June 2026" }
+    ],
+    "competencies": "Personal Skills",
+    "compItems": ["Teamwork", "Responsibility", "Positive attitude", "Leadership", "Commitment", "Adaptability"]
+  },
+  "certifications": {
+    "title": "Awards",
+    "items": [
+      { "name": "Academic Excellence Award", "issuer": "Banco Industrial", "date": "June 2025" },
+      { "name": "Academic Excellence Award", "issuer": "Banco Industrial", "date": "June 2026" }
+    ]
+  },
+  "portfolio": {
+    "title": "Project Portfolio",
+    "ui": "UI",
+    "code": "Code",
+    "projects": [
+      { "title": "Park Point Solutions", "description": "Parking management system with access control and billing features." },
+      { "title": "CyberVault", "description": "Banking management system with end-to-end encryption." },
+      { "title": "Buen Provecho", "description": "Restaurant management system with reservations and inventory features." }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "namePlaceholder": "Your Name",
+    "email": "Email",
+    "subject": "Subject",
+    "subjectPlaceholder": "Subject",
+    "message": "Message",
+    "messagePlaceholder": "Your message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "sent": "Message sent successfully.",
+    "error": "Error sending. Please try again."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  }
+}

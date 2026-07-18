@@ -1,28 +1,17 @@
 ﻿import { motion } from 'framer-motion'
 import { FaGithub, FaUpRightFromSquare, FaImage, FaCode } from 'react-icons/fa6'
+import useLanguage from '../../hooks/useLanguage'
 
-const projects = [
-  {
-    title: 'Park Point Solutions',
-    description: 'Sistema de gestion para parqueaderos con funcionalidades de control de acceso y facturacion.',
-    github: ' ',
-    demo: '#',
-  },
-  {
-    title: 'CyberVault',
-    description: 'Sistema de gestion bancaria con encriptacion de extremo a extremo.',
-    github: 'https://github.com/ocumatz-2021660/Sistema_Bancario',
-    demo: 'https://sistema-bancario-bay.vercel.app?_vercel_share=gMVgp6E9Iw8UhUKIJFaZNqMNO0DkiCFb',
-  },
-  {
-    title: 'Buen Provecho',
-    description: 'Sistema de gestion para restaurantes con funcionalidades de reservas y gestion de inventario.',
-    github: 'https://github.com/iperez-2024003/Gestion-Restaurantes',
-    demo: '#',
-  },
+const projectLinks = [
+  { github: ' ', demo: '#' },
+  { github: 'https://github.com/ocumatz-2021660/Sistema_Bancario', demo: 'https://sistema-bancario-bay.vercel.app?_vercel_share=gMVgp6E9Iw8UhUKIJFaZNqMNO0DkiCFb' },
+  { github: 'https://github.com/iperez-2024003/Gestion-Restaurantes', demo: 'https://buen-provecho-app.vercel.app/' },
 ]
 
 export default function Portfolio() {
+  const { t } = useLanguage()
+  const projects = t('portfolio.projects')
+
   return (
     <section id="portfolio" className="section-padding">
       <div className="max-w-6xl mx-auto">
@@ -32,7 +21,7 @@ export default function Portfolio() {
           viewport={{ once: true }}
           className="text-3xl font-bold text-white text-center mb-16"
         >
-          Portafolio de Proyectos
+          {t('portfolio.title')}
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -57,23 +46,23 @@ export default function Portfolio() {
                 <div className="flex gap-4 mb-4">
                   <div className="flex items-center gap-1.5 text-xs text-gray-500">
                     <FaImage size={12} />
-                    Interfaz
+                    {t('portfolio.ui')}
                   </div>
                   <div className="flex items-center gap-1.5 text-xs text-gray-500">
                     <FaCode size={12} />
-                    Codigo
+                    {t('portfolio.code')}
                   </div>
                 </div>
 
                 <div className="flex gap-3">
                   <a
-                    href={project.github}
+                    href={projectLinks[i].github}
                     className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-white transition-colors"
                   >
                     <FaGithub /> GitHub
                   </a>
                   <a
-                    href={project.demo}
+                    href={projectLinks[i].demo}
                     className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-cyan-400 transition-colors"
                   >
                     <FaUpRightFromSquare /> Demo

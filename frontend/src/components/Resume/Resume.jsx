@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import {
   FaUser,
   FaGraduationCap,
@@ -10,6 +10,7 @@ import {
   FaLocationDot,
   FaCalendarDays,
 } from 'react-icons/fa6'
+import useLanguage from '../../hooks/useLanguage'
 
 const personalData = {
   name: 'Carlos Daniel Chacón Duarte',
@@ -19,44 +20,13 @@ const personalData = {
   age: '18 años',
 }
 
-const education = [
-  {
-    institution: 'Centro Educativo Técnico Laboral Kinal',
-    period: '2024 – Actualidad',
-    degree: 'Diversificado en Informática',
-  },
-  {
-    institution: 'Centro Educativo Técnico Laboral Kinal',
-    period: '2021 – 2023',
-    degree: 'Básico',
-  },
-]
-
-const certifications = [
-  {
-    name: 'Reconocimiento por Excelencia Académica',
-    issuer: 'Banco Industrial',
-    date: 'Junio 2025',
-    url: 'https://www.credly.com/badges/6726271c-2e0d-42ea-9833-2c3947ad40d0/linked_profile',
-  },
-  {
-    name: 'Reconocimiento por Excelencia Académica',
-    issuer: 'Banco Industrial',
-    date: 'Junio 2026',
-    url: 'https://www.credly.com/badges/07253691-7789-48a1-98a6-2087f480b402/linked_profile',
-  },
-]
-
-const competencies = [
-  'Trabajo en equipo',
-  'Responsabilidad',
-  'Actitud positiva',
-  'Liderazgo',
-  'Compromiso',
-  'Capacidad de adaptación',
-]
-
 export default function Resume() {
+  const { t } = useLanguage()
+
+  const education = t('resume.educationItems')
+  const certifications = t('resume.certItems')
+  const competencies = t('resume.compItems')
+
   return (
     <section id="resume" className="section-padding">
       <div className="max-w-6xl mx-auto">
@@ -67,7 +37,7 @@ export default function Resume() {
             viewport={{ once: true }}
             className="text-3xl font-bold text-white text-center"
           >
-            Currículum Virtual
+            {t('resume.title')}
           </motion.h2>
 
           <motion.a
@@ -80,7 +50,7 @@ export default function Resume() {
             className="inline-flex items-center gap-2 px-5 py-2.5 border border-cyan-400 text-cyan-400 rounded-xl text-sm font-medium hover:bg-cyan-400/10 transition-colors"
           >
             <FaDownload size={14} />
-            Descargar CV
+            {t('resume.download')}
           </motion.a>
         </div>
 
@@ -95,7 +65,7 @@ export default function Resume() {
           >
             <div className="flex items-center gap-3 mb-5">
               <FaUser className="text-cyan-400" size={22} />
-              <h3 className="text-lg font-semibold text-white">Datos Personales</h3>
+              <h3 className="text-lg font-semibold text-white">{t('resume.personalData')}</h3>
             </div>
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-gray-400 text-sm">
@@ -132,7 +102,7 @@ export default function Resume() {
           >
             <div className="flex items-center gap-3 mb-5">
               <FaGraduationCap className="text-cyan-400" size={22} />
-              <h3 className="text-lg font-semibold text-white">Educación</h3>
+              <h3 className="text-lg font-semibold text-white">{t('resume.education')}</h3>
             </div>
             <div className="space-y-4">
               {education.map((edu, i) => (
@@ -159,16 +129,13 @@ export default function Resume() {
           >
             <div className="flex items-center gap-3 mb-5">
               <FaCertificate className="text-cyan-400" size={22} />
-              <h3 className="text-lg font-semibold text-white">Reconocimientos</h3>
+              <h3 className="text-lg font-semibold text-white">{t('resume.certifications')}</h3>
             </div>
             <div className="space-y-3">
               {certifications.map((cert, i) => (
-                <a
+                <div
                   key={i}
-                  href={cert.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+                  className="flex items-start gap-3 p-3 rounded-xl bg-white/5"
                 >
                   <FaCertificate size={16} className="text-cyan-400 mt-0.5 shrink-0" />
                   <div>
@@ -176,7 +143,7 @@ export default function Resume() {
                     <p className="text-gray-500 text-xs">{cert.issuer}</p>
                     <p className="text-gray-500 text-xs">{cert.date}</p>
                   </div>
-                </a>
+                </div>
               ))}
             </div>
           </motion.div>
@@ -192,7 +159,7 @@ export default function Resume() {
           >
             <div className="flex items-center gap-3 mb-5">
               <FaStar className="text-cyan-400" size={22} />
-              <h3 className="text-lg font-semibold text-white">Competencias Personales</h3>
+              <h3 className="text-lg font-semibold text-white">{t('resume.competencies')}</h3>
             </div>
             <ul className="space-y-3">
               {competencies.map((comp, i) => (
