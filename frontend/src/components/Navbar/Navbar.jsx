@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react'
+﻿import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { FaBars, FaXmark } from 'react-icons/fa6'
 
@@ -16,21 +16,32 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 50)
-      const sections = links.map(l => document.getElementById(l.id))
-      const scrollY = window.scrollY + 100
-      for (let i = sections.length - 1; i >= 0; i--) {
-        if (sections[i] && sections[i].offsetTop <= scrollY) {
-          setActive(links[i].id)
-          break
-        }
+  const onScroll = useCallback(() => {
+    setScrolled(window.scrollY > 50)
+    const sections = links.map(l => document.getElementById(l.id))
+    const scrollY = window.scrollY + 100
+    for (let i = sections.length - 1; i >= 0; i--) {
+      if (sections[i] && sections[i].offsetTop <= scrollY) {
+        setActive(links[i].id)
+        break
       }
     }
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    let ticking = false
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          onScroll()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [onScroll])
 
   return (
     <motion.nav
@@ -39,8 +50,8 @@ export default function Navbar() {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 border-b border-white/10 transition-all duration-300 ${
         scrolled
-          ? 'bg-gray-950/90 backdrop-blur-xl shadow-lg shadow-black/20'
-          : 'bg-gray-950/60 backdrop-blur-md'
+          ? 'bg-gray-950/95 shadow-lg shadow-black/20'
+          : 'bg-gray-950/70'
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -82,7 +93,7 @@ export default function Navbar() {
         <motion.ul
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden flex flex-col gap-4 px-6 pb-6 bg-gray-950/95 backdrop-blur-md border-b border-white/10"
+          className="md:hidden flex flex-col gap-4 px-6 pb-6 bg-gray-950/95 border-b border-white/10"
         >
           {links.map(link => (
             <li key={link.id}>

@@ -13,13 +13,14 @@ body {
   overflow-x: hidden;
 }
 
-/* -- Dynamic background: floating orbs -- */
+/* -- Dynamic background: floating orbs (GPU-optimized) -- */
 .bg-orbs {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  contain: strict;
 }
 
 .bg-orbs::before,
@@ -27,7 +28,7 @@ body {
   content: '';
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  will-change: transform;
   opacity: 0.4;
 }
 
@@ -53,9 +54,9 @@ body {
 .orb-extra-2 {
   position: fixed;
   border-radius: 50%;
-  filter: blur(90px);
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
 }
 
 .orb-extra-1 {
@@ -107,14 +108,15 @@ body {
   }
 }
 
-/* -- Glass card -- */
+/* -- Glass card (optimized: no backdrop-blur, use semi-transparent bg instead) -- */
 .glass-card {
-  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl;
+  @apply bg-white/[0.03] border border-white/10 rounded-2xl shadow-lg;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 
 .glass-card:hover {
-  box-shadow: 0 8px 40px rgba(6, 182, 212, 0.08);
+  box-shadow: 0 8px 32px rgba(6, 182, 212, 0.06);
 }
 
 /* -- Section padding -- */
@@ -122,7 +124,7 @@ body {
   @apply px-6 py-20 md:px-12 lg:px-24;
 }
 
-/* -- Photo glow -- */
+/* -- Photo glow (optimized: no blur filter) -- */
 .photo-glow {
   position: relative;
 }
@@ -142,23 +144,15 @@ body {
   );
   animation: photoGlowSpin 6s linear infinite;
   z-index: -1;
+  will-change: transform;
 }
 
 .photo-glow::after {
   content: '';
   position: absolute;
-  inset: -8px;
+  inset: -10px;
   border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    rgba(6, 182, 212, 0.3),
-    transparent,
-    rgba(59, 130, 246, 0.2),
-    transparent,
-    rgba(6, 182, 212, 0.3)
-  );
-  animation: photoGlowSpin 6s linear infinite;
-  filter: blur(12px);
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, transparent 70%);
   z-index: -2;
 }
 
@@ -196,6 +190,7 @@ body {
   );
   animation: shimmer 2s ease-in-out infinite;
   animation-delay: 1.5s;
+  will-change: transform;
 }
 
 /* -- Shine effect for portfolio cards -- */
@@ -223,6 +218,7 @@ body {
   transition: transform 0.6s ease;
   pointer-events: none;
   z-index: 1;
+  will-change: transform;
 }
 
 .card-shine:hover::before {
