@@ -1,22 +1,22 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { FaGithub, FaUpRightFromSquare, FaImage, FaCode } from 'react-icons/fa6'
 
 const projects = [
   {
     title: 'Park Point Solutions',
-    description: 'Sistema de gestión para parqueaderos con funcionalidades de control de acceso y facturación.',
+    description: 'Sistema de gestion para parqueaderos con funcionalidades de control de acceso y facturacion.',
     github: ' ',
     demo: '#',
   },
   {
     title: 'CyberVault',
-    description: 'Sistema de gestión gestión bancaria con encriptación de extremo a extremo.',
+    description: 'Sistema de gestion bancaria con encriptacion de extremo a extremo.',
     github: 'https://github.com/ocumatz-2021660/Sistema_Bancario',
     demo: 'https://sistema-bancario-bay.vercel.app?_vercel_share=gMVgp6E9Iw8UhUKIJFaZNqMNO0DkiCFb',
   },
   {
     title: 'Buen Provecho',
-    description: 'Sistema de gestión para restaurantes con funcionalidades de reservas y gestión de inventario.',
+    description: 'Sistema de gestion para restaurantes con funcionalidades de reservas y gestion de inventario.',
     github: 'https://github.com/iperez-2024003/Gestion-Restaurantes',
     demo: '#',
   },
@@ -44,13 +44,13 @@ export default function Portfolio() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -4 }}
-              className="glass-card overflow-hidden group"
+              className="glass-card overflow-hidden group card-shine"
             >
               <div className="h-48 bg-white/5 flex items-center justify-center border-b border-white/10">
                 <FaImage size={40} className="text-gray-600 group-hover:text-cyan-400 transition-colors" />
               </div>
 
-              <div className="p-6">
+              <div className="p-6 relative z-10">
                 <h3 className="text-lg font-semibold text-white mb-2">{project.title}</h3>
                 <p className="text-gray-400 text-sm mb-4">{project.description}</p>
 
@@ -61,7 +61,7 @@ export default function Portfolio() {
                   </div>
                   <div className="flex items-center gap-1.5 text-xs text-gray-500">
                     <FaCode size={12} />
-                    Código
+                    Codigo
                   </div>
                 </div>
 

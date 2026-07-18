@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import { FaJava, FaNodeJs, FaReact, FaAngular, FaDatabase } from 'react-icons/fa6'
+﻿import { motion } from 'framer-motion'
+import { FaJava, FaNodeJs, FaReact, FaDatabase } from 'react-icons/fa6'
 
 const skills = [
   { name: 'Java', icon: <FaJava size={36} />, level: 80, color: 'from-orange-500 to-red-600' },
@@ -43,7 +43,7 @@ export default function Skills() {
                   whileInView={{ width: `${skill.level}%` }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, delay: i * 0.1 }}
-                  className={`h-2.5 rounded-full bg-gradient-to-r ${skill.color}`}
+                  className={`h-2.5 rounded-full bg-gradient-to-r ${skill.color} skill-bar-shimmer`}
                 />
               </div>
               <p className="text-xs text-gray-500 text-right">{skill.level}%</p>
