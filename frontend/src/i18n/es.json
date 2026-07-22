@@ -1,4 +1,4 @@
-﻿{
+{
   "nav": {
     "home": "Inicio",
     "about": "Acerca de",
@@ -23,7 +23,17 @@
     "education": "Kinal — Informatica (6to Diversificado)"
   },
   "skills": {
-    "title": "Habilidades"
+    "title": "Habilidades",
+    "categories": {
+      "languages": "Lenguajes",
+      "frameworks": "Frameworks / Librerías",
+      "databaseDevops": "Database / DevOps"
+    },
+    "levels": {
+      "basic": "Básico",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado"
+    }
   },
   "resume": {
     "title": "Currículum Virtual",

@@ -1,4 +1,4 @@
-﻿{
+{
   "nav": {
     "home": "Home",
     "about": "About",
@@ -23,7 +23,17 @@
     "education": "Kinal — Informatics (6th Grade)"
   },
   "skills": {
-    "title": "Skills"
+    "title": "Skills",
+    "categories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks / Libraries",
+      "databaseDevops": "Database / DevOps"
+    },
+    "levels": {
+      "basic": "Basic",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    }
   },
   "resume": {
     "title": "Virtual Resume",
