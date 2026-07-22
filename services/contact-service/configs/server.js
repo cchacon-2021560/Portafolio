@@ -1,4 +1,4 @@
-import express from 'express'
+﻿import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import contactRoutes from '../src/contact/contact.routes.js'
@@ -8,7 +8,7 @@ dotenv.config()
 
 const app = express()
 
-app.use(cors({ origin: 'http://localhost:5173' }))
+app.use(cors({ origin: process.env.CORS_ORIGIN || 'https://portafolio-frontend-u7u7.onrender.com' }))
 app.use(express.json())
 
 app.use('/api/contact', contactRoutes)
@@ -22,3 +22,5 @@ app.listen(PORT, () => {
 })
 
 export default app
+
+
