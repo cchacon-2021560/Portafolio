@@ -64,9 +64,9 @@
     "ui": "Interfaz",
     "code": "Codigo",
     "projects": [
-      { "title": "Park Point Solutions", "description": "Sistema de gestión para parqueaderos con funcionalidades de control de acceso y facturacion." },
-      { "title": "CyberVault", "description": "Sistema de gestión bancaria con encriptacion de extremo a extremo." },
-      { "title": "Buen Provecho", "description": "Sistema de gestión para restaurantes con funcionalidades de reservas y gestion de inventario." }
+      { "title": "Park Point Solutions", "description": "Sistema de gestión para parqueaderos con funcionalidades de control de acceso y facturacion.", "image": "/proyecto-1.jpg" },
+      { "title": "CyberVault", "description": "Sistema de gestión bancaria con encriptacion de extremo a extremo.", "image": "/proyecto-2.jpg" },
+      { "title": "Buen Provecho", "description": "Sistema de gestión para restaurantes con funcionalidades de reservas y gestion de inventario.", "image": "/proyecto-3.jpg" }
     ]
   },
   "contact": {

@@ -64,9 +64,9 @@
     "ui": "UI",
     "code": "Code",
     "projects": [
-      { "title": "Park Point Solutions", "description": "Parking management system with access control and billing features." },
-      { "title": "CyberVault", "description": "Banking management system with end-to-end encryption." },
-      { "title": "Buen Provecho", "description": "Restaurant management system with reservations and inventory features." }
+      { "title": "Park Point Solutions", "description": "Parking management system with access control and billing features.", "image": "/proyecto-1.jpg" },
+      { "title": "CyberVault", "description": "Banking management system with end-to-end encryption.", "image": "/proyecto-2.jpg" },
+      { "title": "Buen Provecho", "description": "Restaurant management system with reservations and inventory features.", "image": "/proyecto-3.jpg" }
     ]
   },
   "contact": {

@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FaGithub, FaUpRightFromSquare, FaImage, FaCode } from 'react-icons/fa6'
 import useLanguage from '../../hooks/useLanguage'
 
@@ -35,8 +35,12 @@ export default function Portfolio() {
               whileHover={{ y: -4 }}
               className="glass-card overflow-hidden group card-shine"
             >
-              <div className="h-48 bg-white/5 flex items-center justify-center border-b border-white/10">
-                <FaImage size={40} className="text-gray-600 group-hover:text-cyan-400 transition-colors" />
+              <div className="h-48 bg-white/5 border-b border-white/10 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
 
               <div className="p-6 relative z-10">
