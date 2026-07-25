@@ -4,3 +4,6 @@
 **/.env
 **/.env.*
 *.log
+dream_query.mjs
+dream_query2.mjs
+dream_query3.mjs
