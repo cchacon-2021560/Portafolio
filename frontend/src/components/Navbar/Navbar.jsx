@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { FaBars, FaXmark, FaGlobe } from 'react-icons/fa6'
 import useLanguage from '../../hooks/useLanguage'
@@ -12,6 +12,7 @@ export default function Navbar() {
   const links = [
     { id: 'home', label: t('nav.home') },
     { id: 'about', label: t('nav.about') },
+    { id: 'experience', label: t('nav.experience') },
     { id: 'skills', label: t('nav.skills') },
     { id: 'resume', label: t('nav.resume') },
     { id: 'certifications', label: t('nav.certifications') },

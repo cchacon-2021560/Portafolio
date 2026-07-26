@@ -2,6 +2,7 @@
   "nav": {
     "home": "Inicio",
     "about": "Acerca de",
+    "experience": "Experiencia",
     "skills": "Habilidades",
     "resume": "Curriculum",
     "certifications": "Reconocimientos",
@@ -50,7 +51,18 @@
       { "name": "Reconocimiento por Excelencia Académica", "issuer": "Banco Industrial", "date": "Junio 2026" }
     ],
     "competencies": "Competencias Personales",
-    "compItems": ["Trabajo en equipo", "Responsabilidad", "Actitud positiva", "Liderazgo", "Compromiso", "Capacidad de adaptación"]
+    "compItems": ["Trabajo en equipo", "Responsabilidad", "Actitud positiva", "Liderazgo", "Compromiso", "Capacidad de adaptación"],
+    "technicalSkills": "Conocimientos Técnicos",
+    "techItems": [
+      "Arquitectura Limpia y Modular",
+      "Metodologías Ágiles (Scrum / Kanban)",
+      "Git & GitHub",
+      "MySQL & PostgreSQL",
+      "JavaScript",
+      "Java",
+      "HTML5 & CSS3",
+      "React.js"
+    ]
   },
   "certifications": {
     "title": "Reconocimientos",
@@ -59,12 +71,17 @@
       { "name": "Reconocimiento por Excelencia Académica", "issuer": "Banco Industrial", "date": "Junio 2026" }
     ]
   },
+  "experience": {
+    "title": "Experiencia",
+    "company": "Embotelladora La Mariposa, S.A.",
+    "role": "Prácticas Profesionales",
+    "description": "Prácticas profesionales en el área de tecnología."
+  },
   "portfolio": {
     "title": "Portafolio de Proyectos",
     "ui": "Interfaz",
     "code": "Codigo",
     "projects": [
-      { "title": "Park Point Solutions", "description": "Sistema de gestión para parqueaderos con funcionalidades de control de acceso y facturacion.", "image": "/proyecto-1.jpg" },
       { "title": "CyberVault", "description": "Sistema de gestión bancaria con encriptacion de extremo a extremo.", "image": "/proyecto-2.jpg" },
       { "title": "Buen Provecho", "description": "Sistema de gestión para restaurantes con funcionalidades de reservas y gestion de inventario.", "image": "/proyecto-3.jpg" }
     ]

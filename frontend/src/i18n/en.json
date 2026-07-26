@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "about": "About",
+    "experience": "Experience",
     "skills": "Skills",
     "resume": "Resume",
     "certifications": "Awards",
@@ -50,7 +51,18 @@
       { "name": "Academic Excellence Award", "issuer": "Banco Industrial", "date": "June 2026" }
     ],
     "competencies": "Personal Skills",
-    "compItems": ["Teamwork", "Responsibility", "Positive attitude", "Leadership", "Commitment", "Adaptability"]
+    "compItems": ["Teamwork", "Responsibility", "Positive attitude", "Leadership", "Commitment", "Adaptability"],
+    "technicalSkills": "Technical Skills",
+    "techItems": [
+      "Clean & Modular Architecture",
+      "Agile Methodologies (Scrum / Kanban)",
+      "Git & GitHub",
+      "MySQL & PostgreSQL",
+      "JavaScript",
+      "Java",
+      "HTML5 & CSS3",
+      "React.js"
+    ]
   },
   "certifications": {
     "title": "Awards",
@@ -59,12 +71,17 @@
       { "name": "Academic Excellence Award", "issuer": "Banco Industrial", "date": "June 2026" }
     ]
   },
+  "experience": {
+    "title": "Experience",
+    "company": "Embotelladora La Mariposa, S.A.",
+    "role": "Professional Internship",
+    "description": "Professional internship in the technology area."
+  },
   "portfolio": {
     "title": "Project Portfolio",
     "ui": "UI",
     "code": "Code",
     "projects": [
-      { "title": "Park Point Solutions", "description": "Parking management system with access control and billing features.", "image": "/proyecto-1.jpg" },
       { "title": "CyberVault", "description": "Banking management system with end-to-end encryption.", "image": "/proyecto-2.jpg" },
       { "title": "Buen Provecho", "description": "Restaurant management system with reservations and inventory features.", "image": "/proyecto-3.jpg" }
     ]

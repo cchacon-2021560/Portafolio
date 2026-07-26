@@ -1,7 +1,8 @@
-﻿import { LanguageProvider } from './hooks/useLanguage'
+import { LanguageProvider } from './hooks/useLanguage'
 import Navbar from './components/Navbar/Navbar'
 import Home from './components/Home/Home'
 import About from './components/About/About'
+import Experience from './components/Experience/Experience'
 import Skills from './components/Skills/Skills'
 import Resume from './components/Resume/Resume'
 import Certifications from './components/Certifications/Certifications'
@@ -40,6 +41,7 @@ function AppContent() {
         <main>
           <Home />
           <About />
+          <Experience />
           <Skills />
           <Resume />
           <Certifications />
