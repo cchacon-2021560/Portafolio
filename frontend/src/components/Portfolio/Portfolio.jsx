@@ -3,7 +3,6 @@ import { FaGithub, FaUpRightFromSquare, FaImage, FaCode } from 'react-icons/fa6'
 import useLanguage from '../../hooks/useLanguage'
 
 const projectLinks = [
-  { github: ' ', demo: '#' },
   { github: 'https://github.com/ocumatz-2021660/Sistema_Bancario', demo: 'https://sistema-bancario-bay.vercel.app?_vercel_share=gMVgp6E9Iw8UhUKIJFaZNqMNO0DkiCFb' },
   { github: 'https://github.com/iperez-2024003/Gestion-Restaurantes', demo: 'https://buen-provecho-app.vercel.app/' },
 ]
@@ -24,7 +23,7 @@ export default function Portfolio() {
           {t('portfolio.title')}
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
             <motion.div
               key={i}
