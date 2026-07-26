@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import {
   FaUser,
   FaGraduationCap,
@@ -9,6 +9,7 @@ import {
   FaEnvelope,
   FaLocationDot,
   FaCalendarDays,
+  FaLaptopCode,
 } from 'react-icons/fa6'
 import useLanguage from '../../hooks/useLanguage'
 
@@ -26,6 +27,7 @@ export default function Resume() {
   const education = t('resume.educationItems')
   const certifications = t('resume.certItems')
   const competencies = t('resume.compItems')
+  const techSkills = t('resume.techItems')
 
   return (
     <section id="resume" className="section-padding">
@@ -166,6 +168,29 @@ export default function Resume() {
                 <li key={i} className="flex items-center gap-3">
                   <span className="w-2 h-2 rounded-full bg-cyan-400 shrink-0" />
                   <span className="text-gray-400 text-sm">{comp}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Conocimientos Técnicos */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            whileHover={{ y: -4 }}
+            className="glass-card p-6"
+          >
+            <div className="flex items-center gap-3 mb-5">
+              <FaLaptopCode className="text-cyan-400" size={22} />
+              <h3 className="text-lg font-semibold text-white">{t('resume.technicalSkills')}</h3>
+            </div>
+            <ul className="space-y-3">
+              {techSkills.map((skill, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 shrink-0" />
+                  <span className="text-gray-400 text-sm">{skill}</span>
                 </li>
               ))}
             </ul>
