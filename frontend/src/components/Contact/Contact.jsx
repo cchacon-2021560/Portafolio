@@ -47,7 +47,7 @@ export default function Contact() {
 
         <div className="flex justify-center gap-6 mb-12">
           <a
-            href="[Tu LinkedIn]"
+            href="https://www.linkedin.com/in/carlos-chacón-6a8416423"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm"
