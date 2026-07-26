@@ -1,6 +1,6 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaPaperPlane, FaLinkedin, FaUpRightFromSquare } from 'react-icons/fa6'
+import { FaPaperPlane, FaLinkedin, FaGithub, FaUpRightFromSquare } from 'react-icons/fa6'
 import useLanguage from '../../hooks/useLanguage'
 
 export default function Contact() {
@@ -53,6 +53,14 @@ export default function Contact() {
             className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm"
           >
             <FaLinkedin size={18} /> LinkedIn <FaUpRightFromSquare size={10} />
+          </a>
+          <a
+            href="https://github.com/cchacon-2021560"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+          >
+            <FaGithub size={18} /> GitHub <FaUpRightFromSquare size={10} />
           </a>
         </div>
 
